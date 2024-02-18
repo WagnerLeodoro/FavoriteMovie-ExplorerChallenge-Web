@@ -7,7 +7,7 @@ export function Header() {
       <Brand>
         <h1>RocketMovies</h1>
       </Brand>
-      <Input />
+      <Input placeholder="Pesquisar por título" />
       <Profile>
         <div>
           <strong>Wagner Leodoro</strong>

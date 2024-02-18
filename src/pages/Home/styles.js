@@ -7,10 +7,11 @@ export const Container = styled.div`
 
   display: grid;
   grid-template-rows: max-content max-content 1fr;
+  grid-template-columns: 1fr 1fr;
   grid-template-areas:
-    'header'
-    'menu'
-    'content';
+    'header header'
+    'section menu'
+    'content content';
   background-color: ${({ theme }) => theme.COLORS.BACKGROUND_800};
 `
 
@@ -21,6 +22,7 @@ export const Content = styled.div`
 `
 
 export const NewMovie = styled.a`
+  grid-area: menu;
   background-color: ${({ theme }) => theme.COLORS.PINK};
   color: ${({ theme }) => theme.COLORS.BACKGROUND_800};
   display: flex;

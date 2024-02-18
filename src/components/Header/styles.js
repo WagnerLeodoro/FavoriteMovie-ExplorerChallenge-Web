@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
+  grid-area: header;
   width: 100%;
   display: flex;
   align-items: center;
@@ -14,10 +15,10 @@ export const Container = styled.div`
 
   padding: 10px 64px;
   margin-bottom: 8px;
+  gap: 40px;
 `
 export const Brand = styled.div`
   display: flex;
-  justify-content: center;
   align-items: center;
 
   > h1 {

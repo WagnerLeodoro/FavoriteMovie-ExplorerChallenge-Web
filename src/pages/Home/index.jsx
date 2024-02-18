@@ -10,12 +10,11 @@ export function Home() {
     <Container>
       <Header />
 
-      <Section title="Meus Filmes">
-        <NewMovie>
-          <FiPlus size={16} />
-          Adicionar filme
-        </NewMovie>
-      </Section>
+      <Section title="Meus Filmes" />
+      <NewMovie>
+        <FiPlus size={16} />
+        Adicionar filme
+      </NewMovie>
 
       <Content>
         <Movie
