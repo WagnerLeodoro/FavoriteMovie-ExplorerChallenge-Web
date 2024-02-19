@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
   display: flex;
-  margin: 8px 0 15px;
+  margin: 8px 0;
   gap: ${({ isFull }) => (isFull ? '16px' : '12px')};
 
   > svg {
