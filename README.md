@@ -1,8 +1,28 @@
-# React + Vite
+# RocketMovies Favorites
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 💻 Projeto
 
-Currently, two official plugins are available:
+Projeto desenvolvido como desafio da trilha Explorer da Rocketseat. A aplicação permite realizar reviews de filmes e classificá-los de acordo com sua nota.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Temas abordados no desafio:
+
+- Estilização com styled components
+- Rotas utilizando o react-router-dom
+- Componentização de elementos com react js
+
+## 🛠️ Tecnologias
+
+- React Js
+- Styled Components
+
+## 📐 Layout
+
+![Layout](https://raw.githubusercontent.com/WagnerLeodoro/FavoriteMovie-ExplorerChallenge-Web/master/src/assets/layout.png)
+
+## 📝 License
+
+Esse projeto está sob a licença MIT.
+
+## 👨🏻‍💻 Autor
+
+[@WagnerLeodoro](https://www.github.com/WagnerLeodoro)
