@@ -1,20 +1,21 @@
 import { FiArrowLeft } from 'react-icons/fi'
-import { Header } from '../../../components/Header'
-import { Input } from '../../../components/Input'
-import { Textarea } from '../../../components/Textarea'
-import { Section } from '../../../components/Section'
-import { Button } from '../../../components/Button'
+import { Input } from '../../components/Input'
+import { Textarea } from '../../components/Textarea'
+import { Section } from '../../components/Section'
+import { Button } from '../../components/Button'
 import { Container, Controls, Form } from './styles'
-import { MovieItem } from '../../../components/MovieItem'
+import { MovieItem } from '../../components/MovieItem'
+import { Header } from '../../components/Header'
+import { Link } from 'react-router-dom'
 
 export function NewMovie() {
   return (
     <Container>
       <Header />
-      <a href="#">
+      <Link to="/">
         <FiArrowLeft />
         voltar
-      </a>
+      </Link>
 
       <main>
         <Form>

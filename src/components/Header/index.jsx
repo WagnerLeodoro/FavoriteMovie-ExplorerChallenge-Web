@@ -4,11 +4,11 @@ import { Input } from '../Input'
 export function Header() {
   return (
     <Container>
-      <Brand>
+      <Brand to="/">
         <h1>RocketMovies</h1>
       </Brand>
       <Input placeholder="Pesquisar por título" />
-      <Profile>
+      <Profile to="/profile">
         <div>
           <strong>Wagner Leodoro</strong>
           <a>sair</a>

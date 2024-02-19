@@ -4,15 +4,16 @@ import { Container, Tags, UserInfo } from './styles'
 import { Header } from '../../components/Header'
 import { Rating } from '../../components/Rating'
 import { Tag } from '../../components/Tag'
+import { Link } from 'react-router-dom'
 
 export function Details() {
   return (
     <Container>
       <Header />
-      <a href="#">
+      <Link to="/">
         <FiArrowLeft />
         voltar
-      </a>
+      </Link>
 
       <main>
         <header>

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
 export const Container = styled.div`
@@ -17,7 +18,7 @@ export const Container = styled.div`
   margin-bottom: 8px;
   gap: 40px;
 `
-export const Brand = styled.div`
+export const Brand = styled(Link)`
   display: flex;
   align-items: center;
 
@@ -27,7 +28,7 @@ export const Brand = styled.div`
   }
 `
 
-export const Profile = styled.div`
+export const Profile = styled(Link)`
   display: flex;
   align-items: center;
   gap: 10px;
