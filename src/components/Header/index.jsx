@@ -1,20 +1,35 @@
-import { Brand, Container, Profile } from './styles'
-import { Input } from '../Input'
+import { Avatar, Brand, Container, Profile } from './styles'
+import PropTypes from 'prop-types'
+import { useAuth } from '../../hooks/useAuth'
 
-export function Header() {
+export function Header({ children }) {
+  const { signOut } = useAuth()
+
+  function handleSignOut() {
+    signOut()
+  }
   return (
     <Container>
       <Brand to="/">
         <h1>RocketMovies</h1>
       </Brand>
-      <Input placeholder="Pesquisar por título" />
-      <Profile to="/profile">
+      {children}
+      <Profile>
         <div>
           <strong>Wagner Leodoro</strong>
-          <a>sair</a>
+          <a onClick={handleSignOut}>sair</a>
         </div>
-        <img src="https://github.com/WagnerLeodoro.png" alt="foto do usuário" />
+        <Avatar to="/profile">
+          <img
+            src="https://github.com/WagnerLeodoro.png"
+            alt="foto do usuário"
+          />
+        </Avatar>
       </Profile>
     </Container>
   )
+}
+
+Header.propTypes = {
+  children: PropTypes.node,
 }

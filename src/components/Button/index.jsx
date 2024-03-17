@@ -3,7 +3,12 @@ import PropTypes from 'prop-types'
 
 export function Button({ title, loading = false, save, ...rest }) {
   return (
-    <Container type="button" disabled={loading} save={save} {...rest}>
+    <Container
+      type="button"
+      disabled={loading}
+      $save={toString(save)}
+      {...rest}
+    >
       {loading ? 'Carregando...' : title}
     </Container>
   )

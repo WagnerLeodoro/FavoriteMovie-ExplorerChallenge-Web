@@ -8,7 +8,6 @@ export const Container = styled.div`
 
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   background-color: ${({ theme }) => theme.COLORS.BACKGROUND_800};
 
   > header {
@@ -30,6 +29,11 @@ export const Content = styled.div`
   grid-area: content;
   padding: 0 64px;
   overflow-y: auto;
+
+  > h2 {
+    text-align: center;
+    margin-top: 32px;
+  }
 `
 
 export const NewMovie = styled(Link)`

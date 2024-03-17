@@ -28,16 +28,10 @@ export const Brand = styled(Link)`
   }
 `
 
-export const Profile = styled(Link)`
+export const Profile = styled.div`
   display: flex;
   align-items: center;
   gap: 10px;
-
-  > img {
-    width: 56px;
-    height: 56px;
-    border-radius: 50%;
-  }
 
   > div {
     display: flex;
@@ -56,5 +50,13 @@ export const Profile = styled(Link)`
       font-size: 18px;
       color: ${({ theme }) => theme.COLORS.WHITE};
     }
+  }
+`
+
+export const Avatar = styled(Link)`
+  > img {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
   }
 `

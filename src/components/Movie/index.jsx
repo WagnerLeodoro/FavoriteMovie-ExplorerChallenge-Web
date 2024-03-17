@@ -8,13 +8,13 @@ export function Movie({ data, ...rest }) {
   return (
     <Container {...rest}>
       <h1>{data.title}</h1>
-      <Rating grade={data.rating} isFull={false} />
+      <Rating grade={data.rating} isfull={false} />
       <p>{data.description}</p>
 
       {data.tags && (
         <footer>
-          {data.tags.map((tag) => (
-            <Tag key={tag.id} title={tag.name} />
+          {data.tags.map((tag, index) => (
+            <Tag key={index} title={tag.name} />
           ))}
         </footer>
       )}
@@ -24,6 +24,8 @@ export function Movie({ data, ...rest }) {
 
 Movie.propTypes = {
   data: PropTypes.object,
+  rating: PropTypes.number,
+  description: PropTypes.string,
   title: PropTypes.string,
-  tags: PropTypes.arrayOf(PropTypes.object),
+  tags: PropTypes.array,
 }
