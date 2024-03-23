@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from "styled-components"
 
 export const Container = styled.div`
   width: 100%;
@@ -20,6 +20,14 @@ export const Container = styled.div`
       color: ${({ theme }) => theme.COLORS.PINK};
     }
 
+    button {
+      display: flex;
+      align-items: center;
+      background: transparent;
+      border: none;
+      color: ${({ theme }) => theme.COLORS.WHITE};
+    }
+
     svg {
       color: ${({ theme }) => theme.COLORS.PINK};
       font-size: 24px;
@@ -30,10 +38,6 @@ export const Container = styled.div`
 export const Form = styled.form`
   max-width: 340px;
   margin: 30px auto 0;
-
-  > div:nth-child(4) {
-    margin-top: 24px;
-  }
 `
 
 export const Avatar = styled.div`
@@ -47,6 +51,7 @@ export const Avatar = styled.div`
     border-radius: 50%;
     width: 186px;
     height: 186px;
+    object-fit: cover;
   }
 
   > label {

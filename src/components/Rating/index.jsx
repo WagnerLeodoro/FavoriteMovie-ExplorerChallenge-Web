@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types'
 import { VscStarEmpty, VscStarFull } from 'react-icons/vsc'
 import { Container } from './styles'
 
@@ -12,9 +11,4 @@ export function Rating({ grade, full = false }) {
     }
   }
   return <Container $full={full}>{stars}</Container>
-}
-
-Rating.propTypes = {
-  grade: PropTypes.number,
-  full: PropTypes.bool,
 }

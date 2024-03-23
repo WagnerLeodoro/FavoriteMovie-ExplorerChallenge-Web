@@ -1,13 +1,22 @@
-import { Avatar, Brand, Container, Profile } from './styles'
-import PropTypes from 'prop-types'
-import { useAuth } from '../../hooks/useAuth'
+import { api } from "../../services/api"
+import { useAuth } from "../../hooks/useAuth"
+import { useNavigate } from "react-router-dom"
+
+import { Avatar, Brand, Container, Profile } from "./styles"
+import avatarPlaceholder from "../../assets/avatar_placeholder.svg"
 
 export function Header({ children }) {
-  const { signOut } = useAuth()
+  const navigate = useNavigate()
+  const { user, signOut } = useAuth()
 
   function handleSignOut() {
     signOut()
+    navigate("/")
   }
+
+  const avatarUrl = user.avatar
+    ? `${api.getUri()}/files/${user.avatar}`
+    : avatarPlaceholder
   return (
     <Container>
       <Brand to="/">
@@ -16,20 +25,13 @@ export function Header({ children }) {
       {children}
       <Profile>
         <div>
-          <strong>Wagner Leodoro</strong>
+          <strong>{user.name}</strong>
           <a onClick={handleSignOut}>sair</a>
         </div>
         <Avatar to="/profile">
-          <img
-            src="https://github.com/WagnerLeodoro.png"
-            alt="foto do usuário"
-          />
+          <img src={avatarUrl} alt={user.name} />
         </Avatar>
       </Profile>
     </Container>
   )
-}
-
-Header.propTypes = {
-  children: PropTypes.node,
 }

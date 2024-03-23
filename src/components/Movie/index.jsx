@@ -1,5 +1,3 @@
-import PropTypes from 'prop-types'
-
 import { Tag } from '../Tag'
 import { Container } from './styles'
 import { Rating } from '../Rating'
@@ -20,12 +18,4 @@ export function Movie({ data, ...rest }) {
       )}
     </Container>
   )
-}
-
-Movie.propTypes = {
-  data: PropTypes.object,
-  rating: PropTypes.number,
-  description: PropTypes.string,
-  title: PropTypes.string,
-  tags: PropTypes.array,
 }

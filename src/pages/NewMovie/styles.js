@@ -13,7 +13,7 @@ export const Container = styled.div`
     'back'
     'content';
 
-  > a {
+  > button {
     grid-area: back;
     display: flex;
     align-items: center;
@@ -30,8 +30,10 @@ export const Container = styled.div`
 
   .tags {
     display: flex;
+    height: 56px;
     flex-wrap: wrap;
     padding: 16px;
+    margin-bottom: 16px;
     gap: 24px;
 
     border-radius: 8px;

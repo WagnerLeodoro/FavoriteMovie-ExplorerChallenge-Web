@@ -7,13 +7,23 @@ import { useState } from 'react'
 import { useAuth } from '../../hooks/useAuth'
 
 export function SignIn() {
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
-
   const { signIn } = useAuth()
 
-  function handleSignIn() {
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [isLoading, setIsLoading] = useState(false)
+
+  function handleSignIn(e) {
+    e.preventDefault()
+    setIsLoading(true)
     signIn({ email, password })
+      .then(() => {
+        setIsLoading(false)
+      })
+      .catch((err) => {
+        console.log(err)
+        setIsLoading(false)
+      })
   }
   return (
     <Container>
@@ -24,6 +34,7 @@ export function SignIn() {
         <h2>Faça seu login</h2>
 
         <Input
+          id="email"
           placeholder="E-mail"
           type="text"
           icon={FiMail}
@@ -31,6 +42,7 @@ export function SignIn() {
         />
 
         <Input
+          id="password"
           placeholder="Senha"
           type="password"
           icon={FiLock}

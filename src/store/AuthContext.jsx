@@ -1,8 +1,7 @@
-import { createContext, useEffect, useState } from 'react'
-import PropTypes from 'prop-types'
+import { createContext, useEffect, useState } from "react"
+import { api } from "../services/api"
 
-const AuthContext = createContext()
-import { api } from '../services/api'
+const AuthContext = createContext({})
 
 function AuthProvider({ children }) {
   const [data, setData] = useState({})
@@ -10,26 +9,27 @@ function AuthProvider({ children }) {
   async function signIn({ email, password }) {
     try {
       const response = await api.post(
-        '/session',
+        "/session",
         { email, password },
         { withCredentials: true },
       )
       const { user } = response.data
 
-      localStorage.setItem('@moviefav:user', JSON.stringify(user))
+      localStorage.setItem("@rocketmovie:user", JSON.stringify(user))
 
       setData({ user })
+      console.log(user)
     } catch (err) {
       if (err.response) {
         alert(err.response.data.message)
       } else {
-        alert('Não foi possível entrar!')
+        alert("Não foi possível entrar!")
       }
     }
   }
 
   function signOut() {
-    localStorage.removeItem('@moviefav:user')
+    localStorage.removeItem("@rocketmovie:user")
     setData({})
   }
 
@@ -37,25 +37,25 @@ function AuthProvider({ children }) {
     try {
       if (avatarFile) {
         const fileUploadForm = new FormData()
-        fileUploadForm.append('avatar', avatarFile)
-        const response = await api.patch('/users/avatar', fileUploadForm)
+        fileUploadForm.append("avatar", avatarFile)
+        const response = await api.patch("/users/avatar", fileUploadForm)
         user.avatar = response.data.avatar
       }
-      await api.put('/users', user)
-      localStorage.setItem('@moviefav: user', JSON.stringify(user))
+      await api.put("/users", user)
+      localStorage.setItem("@rocketmovie:user", JSON.stringify(user))
       setData({ user })
-      alert('Perfil atualizado com sucesso!')
+      alert("Perfil atualizado com sucesso!")
     } catch (err) {
       if (err.repsonse) {
         alert(err.response.data.message)
       } else {
-        alert('Não foi possível atualizar o perfil!')
+        alert("Não foi possível atualizar o perfil!")
       }
     }
   }
 
   useEffect(() => {
-    const user = localStorage.getItem('@moviefav:user')
+    const user = localStorage.getItem("@rocketmovie:user")
 
     if (user) {
       setData({
@@ -73,5 +73,4 @@ function AuthProvider({ children }) {
   )
 }
 
-AuthProvider.propTypes = { children: PropTypes.node }
-export { AuthContext, AuthProvider }
+export { AuthProvider, AuthContext }

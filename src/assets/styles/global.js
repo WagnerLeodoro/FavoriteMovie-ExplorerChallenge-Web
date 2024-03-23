@@ -1,16 +1,27 @@
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle } from "styled-components"
 
 export default createGlobalStyle`
   * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
+    ::-webkit-scrollbar {
+      background-color: ${({ theme }) => theme.COLORS.BACKGROUND_500};
+      width: 8px;
+    }
+    ::-webkit-scrollbar-thumb {
+    background-color: ${({ theme }) => theme.COLORS.GRAY_200};
+    border-radius: 5px;
+  }
   }
 
   body {
     background-color: ${({ theme }) => theme.COLORS.BACKGROUND_800} ;
     color: ${({ theme }) => theme.COLORS.WHITE};
     -webkit-font-smoothing: antialiased;
+
+    
   }
 
   body, input, button, textarea {

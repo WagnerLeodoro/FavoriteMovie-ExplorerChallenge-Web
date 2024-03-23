@@ -1,5 +1,3 @@
-import PropTypes from 'prop-types'
-
 import { Container } from './styles'
 
 export function Section({ title, children }) {
@@ -9,9 +7,4 @@ export function Section({ title, children }) {
       {children}
     </Container>
   )
-}
-
-Section.propTypes = {
-  title: PropTypes.string.isRequired,
-  children: PropTypes.node,
 }
