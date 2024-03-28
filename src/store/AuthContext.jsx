@@ -18,7 +18,6 @@ function AuthProvider({ children }) {
       localStorage.setItem("@rocketmovie:user", JSON.stringify(user))
 
       setData({ user })
-      console.log(user)
     } catch (err) {
       if (err.response) {
         alert(err.response.data.message)

@@ -1,25 +1,27 @@
-import { useNavigate } from 'react-router-dom'
-import { useState } from 'react'
-import { api } from '../../services/api'
+import { useNavigate } from "react-router-dom"
+import { useState } from "react"
+import { api } from "../../services/api"
 
-import { FiArrowLeft } from 'react-icons/fi'
+import { FiArrowLeft } from "react-icons/fi"
 
-import { Input } from '../../components/Input'
-import { Textarea } from '../../components/Textarea'
-import { Section } from '../../components/Section'
-import { Button } from '../../components/Button'
-import { MovieItem } from '../../components/MovieItem'
-import { Header } from '../../components/Header'
-import { ButtonText } from '../../components/ButtonText'
+import { Input } from "../../components/Input"
+import { Textarea } from "../../components/Textarea"
+import { Section } from "../../components/Section"
+import { Button } from "../../components/Button"
+import { MovieItem } from "../../components/MovieItem"
+import { Header } from "../../components/Header"
+import { ButtonText } from "../../components/ButtonText"
 
-import { Container, Controls, Form } from './styles'
+import { Container, Controls, Form } from "./styles"
 
 export function NewMovie() {
-  const [title, setTitle] = useState('')
-  const [description, setDescription] = useState('')
-  const [rating, setRating] = useState('')
+  const [title, setTitle] = useState("")
+  const [description, setDescription] = useState("")
+
+  const [rating, setRating] = useState("")
   const [tags, setTags] = useState([])
-  const [newTag, setNewTag] = useState('')
+
+  const [newTag, setNewTag] = useState("")
 
   const navigate = useNavigate()
 
@@ -29,7 +31,7 @@ export function NewMovie() {
 
   function handleNewTag() {
     setTags((prevState) => [...prevState, newTag])
-    setNewTag('')
+    setNewTag("")
   }
 
   function handleRemoveTag(deleted) {
@@ -38,21 +40,21 @@ export function NewMovie() {
 
   async function handleNewMovie() {
     if (!title) {
-      return alert('Digite o título do filme')
+      return alert("Digite o título do filme")
     }
     if (newTag) {
       return alert(
-        'Você deixou uma tag no campo para adicionar porém não clicou em adicionar. Clique para adicionar ou deixe o campo vazio!',
+        "Você deixou uma tag no campo para adicionar porém não clicou em adicionar. Clique para adicionar ou deixe o campo vazio!",
       )
     }
-    await api.post('/movies', { title, description, tags, rating })
-    alert('Filme adicionado com sucesso!')
+    await api.post("/movies", { title, description, tags, rating })
+    alert("Filme adicionado com sucesso!")
     handleBack()
   }
 
   function handleDiscardMovie() {
     const userConfirm = confirm(
-      'Todas as alterações serão perdidas... Tem certeza que deseja descartar as mesmo assim?',
+      "Todas as alterações serão perdidas... Tem certeza que deseja descartar as mesmo assim?",
     )
 
     if (userConfirm) {
@@ -104,7 +106,7 @@ export function NewMovie() {
             $isnew
             placeholder="Nova tag"
             onChange={(e) => setNewTag(e.target.value)}
-            onClick={handleNewTag}
+            onClick={() => handleNewTag()}
           />
         </Section>
         <Controls>

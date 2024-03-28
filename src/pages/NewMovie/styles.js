@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from "styled-components"
 
 export const Container = styled.div`
   width: 100%;
@@ -9,9 +9,9 @@ export const Container = styled.div`
   display: grid;
   grid-template-rows: auto auto 1fr;
   grid-template-areas:
-    'header'
-    'back'
-    'content';
+    "header"
+    "back"
+    "content";
 
   > button {
     grid-area: back;
@@ -30,14 +30,11 @@ export const Container = styled.div`
 
   .tags {
     display: flex;
-    height: 56px;
     flex-wrap: wrap;
-    padding: 16px;
     margin-bottom: 16px;
     gap: 24px;
 
     border-radius: 8px;
-    background-color: ${({ theme }) => theme.COLORS.BACKGROUND_900};
   }
 `
 

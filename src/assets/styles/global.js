@@ -7,13 +7,15 @@ export default createGlobalStyle`
     box-sizing: border-box;
 
     ::-webkit-scrollbar {
-      background-color: ${({ theme }) => theme.COLORS.BACKGROUND_500};
-      width: 8px;
-    }
-    ::-webkit-scrollbar-thumb {
-    background-color: ${({ theme }) => theme.COLORS.GRAY_200};
-    border-radius: 5px;
+      -webkit-appearance: none;
+      width: 8px; 
   }
+  ::-webkit-scrollbar-thumb {
+      border-radius: 8px;
+      background-color: ${({ theme }) => theme.COLORS.PINK};
+      -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);   
+  }
+
   }
 
   body {
